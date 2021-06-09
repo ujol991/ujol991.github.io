@@ -1,0 +1,18 @@
+.img {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+img {
+  width: 382px;
+  height: 368px;
+}
+.torpay-btn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
