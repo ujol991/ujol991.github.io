@@ -41,6 +41,7 @@ function pauseSong(){
     playBtn.querySelector('i.fas').classList.add('fa-play');
     playBtn.querySelector('i.fas').classList.remove('fa-pause');
     audio.pause();
+
 }
 
 //prev song
@@ -66,7 +67,8 @@ function nextSong(){
     playSong();
 }
 //event listners
-playBtn.addEventListener('click', ()=>{
+playBtn.addEventListener('click', (e)=>{
+
     const isPlaying = musicContainer.classList.contains('play');
     if(isPlaying){
         pauseSong();
@@ -78,6 +80,7 @@ playBtn.addEventListener('click', ()=>{
 
 //progress bar
  function progressBar(e){
+
   const {duration, currentTime} = e.srcElement;
   const progressPer =  (currentTime / duration) * 100 ;
   progress.style.width = `${progressPer}%`;
@@ -88,6 +91,7 @@ function setProgress(e) {
   const width = this.clientWidth;
   const clickX = e.offsetX;
   const duration = audio.duration;
+  console.log(width, clickX, duration);
 
   audio.currentTime = (clickX / width) * duration;
 }
@@ -103,3 +107,4 @@ nextBtn.addEventListener('click', nextSong);
 
 //progress
 audio.addEventListener('timeupdate', progressBar);
+
